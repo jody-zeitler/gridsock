@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Whiteboard and Chat</title>
+<link type="text/css" rel="stylesheet" href="grid.css" />
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+<script type="text/javascript" src="http://75.72.160.131:8080/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="grid.js"></script>
+<script type="text/javascript" src="chat.js"></script>
+</head>
+
+<body>
+
+<div id='menu'>
+	<button onclick='newGrid(event)'>New Board</button>
+	<button onclick='saveGrid(event)'>Save Board</button>
+	<button onclick='loadGrid(event)'>Load Board</button>
+
+	<span class='spacer'></span>
+
+	<button onclick='grid.clearCanvas()'>Clear Canvas</button>
+	<button onclick='grid.clearBoard()'>Clear Magnets</button>
+
+	<span class='spacer'></span>
+	<input type='checkbox' id='showGrid' onclick='grid.toggleGrid()' checked/>Show Grid
+	<span class='spacer'></span>
+
+	<button onclick='loadBackground(event)'>Background</button>
+	<button onclick='uploadMagnet(event)'>Upload Magnet</button>
+	<button onclick="alert('To be implemented.')">Draw Magnet</button>
+
+	<span class='spacer'></span>
+
+	<input type='checkbox' id='showNumbers' onclick='grid.showNumbers = grid.showNumbers ? false : true; grid.redrawBoard()' checked />Number Magnets
+	<input type='checkbox' id='snapTo' onclick='grid.snapTo = grid.snapTo ? false : true; grid.redrawBoard()' checked />Snap to Grid
+</div>
+
+<div id='tools'>
+
+	<br />
+	<div class='tool selected' onclick="$('.tool').removeClass('selected'); $(this).addClass('selected'); grid.selectTool('marker')">Marker</div>
+	<div class='tool' onclick="$('.tool').removeClass('selected'); $(this).addClass('selected'); grid.selectTool('eraser')">Eraser</div>
+	<br />
+	<br />
+	Color: #<input id='colorValue' size='5' onchange="$('.color').removeClass('selected'); grid.selectColor(this.value)" value='000000' /><br />
+	<div class='color selected' style='background: #000000' onclick="$('.color').removeClass('selected'); $(this).addClass('selected'); grid.selectColor('000000')"></div>
+	<div class='color' style='background: #FF0000' onclick="$('.color').removeClass('selected'); $(this).addClass('selected'); grid.selectColor('FF0000')"></div>
+	<br />
+	<div class='color' style='background: #00FF00' onclick="$('.color').removeClass('selected'); $(this).addClass('selected'); grid.selectColor('00FF00')"></div>
+	<div class='color' style='background: #0000FF' onclick="$('.color').removeClass('selected'); $(this).addClass('selected'); grid.selectColor('0000FF')"></div>
+
+	<br />
+	<br />
+
+	Size: <span id='toolSize'>5</span><br />
+	<input type='range' style='width:94%' min='1' max='50' value='5' onchange="grid.selectSize(this.value)" />
+
+	<br />
+	<br />
+
+	Magnet Width: <input id='magWidth' size='3' onchange='grid.setWidth(this.value)' />px
+	<br />
+	<input name='magSize' type='radio' onchange="grid.setWidth('S')" />S
+	<input name='magSize' type='radio' onchange="grid.setWidth('M')" checked />M
+	<input name='magSize' type='radio' onchange="grid.setWidth('L')" />L
+	<input name='magSize' type='radio' onchange="grid.setWidth('H')" />H
+	<input name='magSize' type='radio' onchange="grid.setWidth('G')" />G
+
+	<br />
+	<br />
+
+	Drag to board to place:<br />
+	<div id='magnets'></div>
+
+</div>
+
+<div id='chat'>
+	<div id='users'></div>
+	<div id='output'></div>
+	<div id='input'>
+		Chat Username:<br />
+		<input id='username' onkeydown='checkEnter(event,this)' /><button onclick='login()'>Log In</button>
+	</div>
+</div>
+
+</body>
+</html>

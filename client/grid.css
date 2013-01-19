@@ -1,0 +1,119 @@
+body{
+	font-family: "Tahoma", "Verdana";
+	font-size: 12px; }
+
+#menu{
+	position: absolute;
+	top: 0px; left: 0px;
+	margin: 2px; padding: 2px;
+	border: 1px solid #CCCCCC; }
+
+.popup{
+	position: absolute;
+	padding: 5px;
+	background: #EEEEEE;
+	border: 1px solid #000000; }
+
+.spacer{
+	margin-left: 10px;
+	margin-right: 10px; }
+	
+#tools{
+	position: absolute;
+	top: 40px; left: 0px;
+	margin: 2px; padding: 2px;
+	border: 1px solid #CCCCCC; }
+
+#magnets{
+	width: 200px;
+	height: 500px;
+	overflow-x: hidden;
+	overflow-y: scroll; }
+
+.magnet{
+	max-width: 80px;
+	cursor: move;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none; }
+	
+.tool{
+	display: inline-block;
+	border: 2px solid #CCCCCC;
+	font-size: 16px;
+	font-weight: bold;
+	cursor: pointer; }
+	
+.color{
+	display: inline-block;
+	width: 20px; height: 20px;
+	border: 2px solid #CCCCCC;
+	cursor: pointer; }
+	
+.selected{
+	border: 2px solid #333333; }
+
+#boardspace{
+	position: absolute;
+	top: 40px;
+	left: 220px;
+	width: 800px;
+	height: 800px;
+	margin: 2px;
+	border: 1px solid #000000;
+}
+
+#chat{
+	position: absolute;
+	top: 40px; left: 1000px;
+	width: 300px;
+	margin: 2px; padding: 2px;
+	border: 1px solid #CCCCCC; }
+
+#input{ text-align: center; }	
+#input input{ width: 70%; margin: 2px; padding: 2px; }
+#input textarea{ width: 240px; height: 50px; margin: 2px; padding: 2px; }
+
+#users{
+	width: 290px;
+	height: 50px;
+	margin: 2px; padding: 2px;
+	background: #EEEEEE;
+	border: 1px solid #AAAAAA; }
+
+#output{
+	width: 290px;
+	height: 650px;
+	overflow: auto;
+	margin: 2px; padding: 2px; }
+	
+.system{
+	margin: 3px; padding: 1px;
+	background: #EEEEEE;
+	color: #CC0000;
+	border: 1px solid #AAAAAA;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px; }
+
+.message{
+	margin: 3px; padding: 1px;
+	background: #F8F8F8;
+	border: 1px solid #CCCCCC;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px; }
+	
+.tag{ white-space: nowrap; }
+	
+.username{
+	font-size: 11px;
+	color: #0055BB; }
+	
+.time{
+	font-size: 10px;
+	color: #BBBBBB; }
