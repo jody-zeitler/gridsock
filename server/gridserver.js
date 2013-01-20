@@ -1,3 +1,8 @@
+/* Gridserver, a Node.js server for canvas collaboration
+ * Copyright (c) 2013 Jody Zeitler
+ * Licensed under the MIT license.
+ */
+
 var sys = require("sys"),
     http = require("http"),
     url = require("url"),

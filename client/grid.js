@@ -1,7 +1,6 @@
-/*
- * Gridsock
- * A canvas whiteboard with magnets
- * Written by Jody Zeitler
+/* Gridsock, a canvas whiteboard with magnets
+ * Copyright (c) 2013 Jody Zeitler
+ * Licensed under the MIT license.
  */
 
 var grid, socket;
